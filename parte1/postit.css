@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+body {
+  background-color: #666666;
+  font-family: "Indie Flower", cursive;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-height: 800px;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-inline: 40px;
+}
+
+.postit {
+  display: flex;
+  width: 250px;
+  height: 215px;
+  flex-grow: 1;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 7px 20px -10px #000000bf;
+  transition: all 0.3s ease-in-out;
+  transform: perspective(1000px) translateZ(0px);
+}
+
+.postit::after {
+  content: "";
+  background-image: linear-gradient(to top, #00000063, transparent 60%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.postit.beige {
+  background-color: #fdffd0;
+  rotate: -10deg;
+}
+
+.postit.green {
+  background-color: #cbfdcd;
+  rotate: 6deg;
+}
+.postit.purple {
+  background-color: #cacafa;
+  rotate: -7deg;
+}
+
+.postit h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+.postit p {
+  font-size: 1.75rem;
+  font-weight: 100;
+}
+
+.postit:hover {
+  rotate: 0deg;
+  scale: 1.3;
+  box-shadow: 10px 15px 40px -8px #000000;
+  z-index: 2;
+}
+
+.postit:nth-of-type(1) {
+  animation: splash-postit 0.3s ease-in-out 100ms backwards;
+}
+.postit:nth-of-type(3) {
+  animation: splash-postit 0.3s ease-in-out 350ms backwards;
+}
+.postit:nth-of-type(8) {
+  animation: splash-postit 0.3s ease-in-out 600ms backwards;
+}
+.postit:nth-of-type(5) {
+  animation: splash-postit 0.3s ease-in-out 850ms backwards;
+}
+.postit:nth-of-type(2) {
+  animation: splash-postit 0.3s ease-in-out 1100ms backwards;
+}
+.postit:nth-of-type(7) {
+  animation: splash-postit 0.3s ease-in-out 1350ms backwards;
+}
+.postit:nth-of-type(4) {
+  animation: splash-postit 0.3s ease-in-out 1600ms backwards;
+}
+.postit:nth-of-type(6) {
+  animation: splash-postit 0.3s ease-in-out 1850ms backwards;
+}
+
+@keyframes splash-postit {
+  0% {
+    transform: perspective(1000px) translateZ(1000px);
+  }
+  100% {
+    transform: perspective(1000px) translateZ(0px);
+  }
+}
